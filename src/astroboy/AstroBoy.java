@@ -211,17 +211,17 @@ public class AstroBoy extends JPanel implements KeyListener,Runnable,WindowListe
         //////////Game Starts//////////
         for(;;){
             if(true){
-                g.setColor(Color.DARK_GRAY);
-                g.fillRect(700,0,200,700);
-                g.setColor(Color.green);
-                g.drawRect(700+5,10,200-10,700-20);
-                Font font=Font.decode("elephant");
-                
-                font = new Font("serif",Font.BOLD,20);
-                g.setFont(font);
-                g.drawString("Astroid Destroyed",730,200);
-                g.drawString(astroids_destroyed+"",790,300);
-                
+//                g.setColor(Color.DARK_GRAY);
+//                g.fillRect(700,0,200,700);
+//                g.setColor(Color.green);
+//                g.drawRect(700+5,10,200-10,700-20);
+//                Font font=Font.decode("elephant");
+//                
+//                font = new Font("serif",Font.BOLD,20);
+//                g.setFont(font);
+//                g.drawString("Astroid Destroyed",730,200);
+//                g.drawString(astroids_destroyed+"",790,300);
+//                
                 if(wayClear()){
                     createAstroid();
                     //debug.println(list_astroid.size());
@@ -366,9 +366,12 @@ public class AstroBoy extends JPanel implements KeyListener,Runnable,WindowListe
         frame.addKeyListener(moving_img);
         frame.addWindowListener(moving_img);
         
-        
+        //frame.setLayout(null);
+        moving_img.setBounds(0, 0, 700, 700);
         frame.add(moving_img);
-
+        
+        frame.add(new GameScore());
+        
         frame.setTitle("Astroid Shooter");
 
         frame.setVisible(true);
